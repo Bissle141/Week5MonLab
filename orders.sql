@@ -15,8 +15,8 @@ VALUES
 (121, 'lotion', 6.47, 1),
 (121, 'grapes', 4.50, 1),
 (344, 'lotion', 6.47, 1),
-(344, 'hairspray', 7.11, 1),
-(344, 'glitter', 3.00, 1);
+(344, 'hairspray', 7.11, 4),
+(344, 'glitter', 3.00, 2);
 
 
 -- Select all the records from the orders table.
@@ -26,7 +26,7 @@ SELECT * FROM orders
 SELECT SUM(quantity) FROM orders;
 
 -- Calculate the total order price.
-SELECT SUM(product_price) FROM orders;
+SELECT SUM(product_price * quantity) FROM orders;
 
 -- Calculate the total order price by a single person_id.
 SELECT SUM(product_price)
